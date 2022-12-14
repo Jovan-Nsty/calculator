@@ -10,6 +10,7 @@ let operandOne = 0
 let operandTwo = 0
 let result = 0
 
+// track pressed numbers
 btnNumber.forEach((button) => {
     button.addEventListener('click', () => {
         numberStorage += button.innerText
@@ -17,6 +18,7 @@ btnNumber.forEach((button) => {
     })
 })
 
+// define operator and set first operand
 btnOperator.forEach((operator) => {
     operator.addEventListener('click', () => {
         setOperator(operator.innerText)
@@ -25,12 +27,14 @@ btnOperator.forEach((operator) => {
     })
 })
 
+// define second operand and do the calculation
 btnEquals.addEventListener('click', () => {
     setOperandTwo(numberStorage)
     result = operate(operatorSymbol, operandOne, operandTwo)
     displayOutput(result)
 })
 
+// clear display
 btnClear.addEventListener('click', () => {
     clear()
 })
@@ -43,6 +47,7 @@ function clear() {
     numberStorage = ''
 }
 
+// set values
 function setOperandOne(value) {
     operandOne = parseInt(value)
 }
@@ -55,10 +60,12 @@ function setOperator(value) {
     operatorSymbol = value
 }
 
+// display content
 function displayOutput(string) {
     display.innerText = string
 }
 
+// basic math functions
 function add(a, b) {
     return a + b
 }
@@ -79,6 +86,7 @@ function divide(a, b) {
     }
 }
 
+// main operate function
 function operate(operator, operandOne, operandTwo) {
     switch (operator) {
         case '+':
