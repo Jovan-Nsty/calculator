@@ -2,6 +2,7 @@ const display = document.getElementById('display')
 const btnNumber = document.querySelectorAll('.number')
 const btnOperator = document.querySelectorAll('.operator')
 const btnEquals = document.getElementById('equals')
+const btnClear = document.getElementById('clear')
 
 let numberStorage = ''
 let operatorSymbol = ''
@@ -29,6 +30,18 @@ btnEquals.addEventListener('click', () => {
     result = operate(operatorSymbol, operandOne, operandTwo)
     displayOutput(result)
 })
+
+btnClear.addEventListener('click', () => {
+    clear()
+})
+
+function clear() {
+    setOperandOne(0)
+    setOperandTwo(0)
+    setOperator('')
+    displayOutput(0)
+    numberStorage = ''
+}
 
 function setOperandOne(value) {
     operandOne = parseInt(value)
