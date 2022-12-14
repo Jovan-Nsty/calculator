@@ -18,17 +18,29 @@ btnNumber.forEach((button) => {
 
 btnOperator.forEach((operator) => {
     operator.addEventListener('click', () => {
-        operatorSymbol = operator.innerText
-        operandOne = parseInt(numberStorage)
+        setOperator(operator.innerText)
+        setOperandOne(numberStorage)
         numberStorage = ''
     })
 })
 
 btnEquals.addEventListener('click', () => {
-    operandTwo = parseInt(numberStorage);
+    setOperandTwo(numberStorage)
     result = operate(operatorSymbol, operandOne, operandTwo)
     displayOutput(result)
 })
+
+function setOperandOne(value) {
+    operandOne = parseInt(value)
+}
+
+function setOperandTwo(value) {
+    operandTwo = parseInt(value)
+}
+
+function setOperator(value) {
+    operatorSymbol = value
+}
 
 function displayOutput(string) {
     display.innerText = string
