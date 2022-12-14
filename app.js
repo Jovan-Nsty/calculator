@@ -1,3 +1,18 @@
+const display = document.getElementById('display')
+const btnNumber = document.querySelectorAll('.number')
+let numberStorage = ''
+
+btnNumber.forEach((button) => {
+    button.addEventListener('click', () => {
+        numberStorage += button.innerText
+        displayOutput(numberStorage)
+    })
+})
+
+function displayOutput(string) {
+    display.innerText = string
+}
+
 function add(a, b) {
     return a + b
 }
