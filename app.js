@@ -30,7 +30,6 @@ btnOperator.forEach((operator) => {
             setOperandOne(numberStorage)
             numberStorage = ''
         }
-
     })
 })
 
@@ -38,8 +37,16 @@ btnOperator.forEach((operator) => {
 btnEquals.addEventListener('click', () => {
     setOperandTwo(numberStorage)
     result = operate(operatorSymbol, operandOne, operandTwo)
-    displayOutput(result)
+    checkUndefined(result)
 })
+
+function checkUndefined(value) {
+    if (value === undefined) {
+        return 0
+    } else {
+        displayOutput(value)
+    }
+}
 
 // clear display
 btnClear.addEventListener('click', () => {
