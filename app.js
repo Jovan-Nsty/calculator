@@ -6,6 +6,7 @@ const btnClear = document.getElementById('clear')
 
 let numberStorage = ''
 let operatorSymbol = ''
+let operatorCount = 0
 let operandOne = 0
 let operandTwo = 0
 let result = 0
@@ -21,9 +22,15 @@ btnNumber.forEach((button) => {
 // define operator and set first operand
 btnOperator.forEach((operator) => {
     operator.addEventListener('click', () => {
-        setOperator(operator.innerText)
-        setOperandOne(numberStorage)
-        numberStorage = ''
+        operatorCount++
+        if (operatorCount > 1) {
+            pairEvaluation(operator)
+        } else {
+            setOperator(operator.innerText)
+            setOperandOne(numberStorage)
+            numberStorage = ''
+        }
+
     })
 })
 
@@ -39,11 +46,22 @@ btnClear.addEventListener('click', () => {
     clear()
 })
 
+// string together several operations
+function pairEvaluation(operation) {
+    let temp = parseInt(numberStorage)
+    let result = operate(operatorSymbol, operandOne, temp)
+    setOperator(operation.innerText)
+    setOperandOne(result)
+    displayOutput(result)
+    numberStorage = ''
+}
+
 function clear() {
     setOperandOne(0)
     setOperandTwo(0)
     setOperator('')
     displayOutput(0)
+    operatorCount = 0
     numberStorage = ''
 }
 
