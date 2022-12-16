@@ -45,6 +45,15 @@ button {
     font-size: 25px;
 }
 
+button:hover {
+    cursor: pointer;
+    background-color: #d9d9d9;
+}
+
+button.operator:hover {
+    background-color: #fca311;
+}
+
 .columns {
     display: flex;
 }
