@@ -30,6 +30,9 @@ body {
     display: flex;
     flex-direction: row-reverse;
     align-items: flex-end;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 #buttons {
