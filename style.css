@@ -4,20 +4,51 @@
     box-sizing: border-box;
 }
 
+html,
 body {
-    background-color: #000;
+    background-color: #fb8500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 #main {
-    height: 600px;
-    width: 500px;
-    background-color: darkgray;
+    height: 510px;
+    width: 390px;
+    background-color: #000;
+    font-size: 40px;
+    border-radius: 10px;
+}
+
+#display {
+    width: 360px;
+    height: 75px;
+    color: #fff;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+#buttons {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 button {
-    padding: 7px;
+    height: 100px;
+    width: 90px;
+    border: 1px solid black;
+    font-size: 25px;
+}
+
+.columns {
+    display: flex;
+}
+
+.operator {
+    background-color: #ffb703;
 }
