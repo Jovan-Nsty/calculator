@@ -53,6 +53,15 @@ btnClear.addEventListener('click', () => {
     clear()
 })
 
+function clear() {
+    setOperandOne(0)
+    setOperandTwo(0)
+    setOperator('')
+    displayOutput(0)
+    operatorCount = 0
+    numberStorage = ''
+}
+
 // string together several operations
 function pairEvaluation(operation) {
     let temp = parseInt(numberStorage)
@@ -63,33 +72,20 @@ function pairEvaluation(operation) {
     numberStorage = ''
 }
 
-function clear() {
-    setOperandOne(0)
-    setOperandTwo(0)
-    setOperator('')
-    displayOutput(0)
-    operatorCount = 0
-    numberStorage = ''
-}
-
 // set values
 function setOperandOne(value) {
     if (numberStorage === '') {
         operandOne = 0
-        console.log(operandOne)
     } else {
         operandOne = parseInt(value)
-        console.log(operandOne)
     }
 }
 
 function setOperandTwo(value) {
     if (numberStorage === '') {
         operandTwo = 0
-        console.log(operandTwo)
     } else {
         operandTwo = parseInt(value)
-        console.log(operandTwo)
     }
 }
 
