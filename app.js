@@ -74,11 +74,23 @@ function clear() {
 
 // set values
 function setOperandOne(value) {
-    operandOne = parseInt(value)
+    if (numberStorage === '') {
+        operandOne = 0
+        console.log(operandOne)
+    } else {
+        operandOne = parseInt(value)
+        console.log(operandOne)
+    }
 }
 
 function setOperandTwo(value) {
-    operandTwo = parseInt(value)
+    if (numberStorage === '') {
+        operandTwo = 0
+        console.log(operandTwo)
+    } else {
+        operandTwo = parseInt(value)
+        console.log(operandTwo)
+    }
 }
 
 function setOperator(value) {

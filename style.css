@@ -67,6 +67,7 @@ button.operator:hover {
     display: flex;
 }
 
+#equals,
 .operator {
     background-color: #ffb703;
 }
