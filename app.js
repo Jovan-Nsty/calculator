@@ -64,12 +64,17 @@ function clear() {
 
 // string together several operations
 function pairEvaluation(operation) {
-    let temp = parseInt(numberStorage)
-    let result = operate(operatorSymbol, operandOne, temp)
-    setOperator(operation.innerText)
-    setOperandOne(result)
-    displayOutput(result)
-    numberStorage = ''
+    let temp = numberStorage
+    if (temp.length <= 0) {
+        return
+    } else {
+        temp = parseInt(numberStorage)
+        let result = operate(operatorSymbol, operandOne, temp)
+        setOperator(operation.innerText)
+        setOperandOne(result)
+        displayOutput(result)
+        numberStorage = ''
+    }
 }
 
 // set values
