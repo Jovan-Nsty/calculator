@@ -5,7 +5,6 @@ Note: This project was challenging due to the nature of mathematical concepts an
 It's fully functional with current operations. 
 
 Missing:
-- decimal number option (logic)
-- +/- number option (logic)
+- decimal number option 
 
-Those will be implemented in the future.
+It will be implemented in the future.

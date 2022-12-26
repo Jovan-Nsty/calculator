@@ -3,6 +3,7 @@ const btnNumber = document.querySelectorAll('.number')
 const btnOperator = document.querySelectorAll('.operator')
 const btnEquals = document.getElementById('equals')
 const btnClear = document.getElementById('clear')
+const btnPosNeg = document.getElementById('pos-neg')
 
 let numberStorage = ''
 let operatorSymbol = ''
@@ -10,10 +11,23 @@ let operatorCount = 0
 let operandOne = 0
 let operandTwo = 0
 let result = 0
+let positiveNegativeCounter = 0
+
+btnPosNeg.addEventListener('click', () => {
+    positiveNegativeCounter++
+    if (positiveNegativeCounter % 2 !== 0) {
+        numberStorage = '-'.concat(numberStorage)
+        displayOutput(numberStorage)
+    } else {
+        numberStorage = numberStorage.slice(1)
+        displayOutput(numberStorage)
+    }
+})
 
 // track pressed numbers
 btnNumber.forEach((button) => {
     button.addEventListener('click', () => {
+        positiveNegativeCounter = 0
         numberStorage += button.innerText
         displayOutput(numberStorage)
     })
@@ -49,9 +63,7 @@ function checkUndefined(value) {
 }
 
 // clear display
-btnClear.addEventListener('click', () => {
-    clear()
-})
+btnClear.addEventListener('click', () => clear())
 
 function clear() {
     setOperandOne(0)
