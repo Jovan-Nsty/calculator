@@ -6,9 +6,9 @@ It's fully functional with current operations.
 
 Those include basic operations such as:
 
-Addition: +
-Subtraction: -
-Multiply: *
-Divide: /
+- Addition: +
+- Subtraction: -
+- Multiply: *
+- Divide: /
 
 Operations with decimal and positive/negative numbers are available.
