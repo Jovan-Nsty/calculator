@@ -15,6 +15,7 @@ let result = 0
 let positiveNegativeCounter = 0
 let decimalCounter = 0
 
+// convert number to decimal
 btnDecimal.addEventListener('click', () => {
     if (decimalCounter < 1) {
         numberStorage = numberStorage.concat('.')
@@ -23,6 +24,7 @@ btnDecimal.addEventListener('click', () => {
     }
 })
 
+// convert number to positive or negative
 btnPosNeg.addEventListener('click', () => {
     positiveNegativeCounter++
     if (positiveNegativeCounter % 2 !== 0) {
