@@ -4,6 +4,7 @@ const btnOperator = document.querySelectorAll('.operator')
 const btnEquals = document.getElementById('equals')
 const btnClear = document.getElementById('clear')
 const btnPosNeg = document.getElementById('pos-neg')
+const btnDecimal = document.getElementById('decimal')
 
 let numberStorage = ''
 let operatorSymbol = ''
@@ -12,6 +13,15 @@ let operandOne = 0
 let operandTwo = 0
 let result = 0
 let positiveNegativeCounter = 0
+let decimalCounter = 0
+
+btnDecimal.addEventListener('click', () => {
+    if (decimalCounter < 1) {
+        numberStorage = numberStorage.concat('.')
+        displayOutput(numberStorage)
+        decimalCounter++
+    }
+})
 
 btnPosNeg.addEventListener('click', () => {
     positiveNegativeCounter++
@@ -37,6 +47,7 @@ btnNumber.forEach((button) => {
 btnOperator.forEach((operator) => {
     operator.addEventListener('click', () => {
         operatorCount++
+        decimalCounter = 0
         if (operatorCount > 1) {
             pairEvaluation(operator)
         } else {
@@ -50,6 +61,7 @@ btnOperator.forEach((operator) => {
 // define second operand and do the calculation
 btnEquals.addEventListener('click', () => {
     setOperandTwo(numberStorage)
+    decimalCounter = 0
     result = operate(operatorSymbol, operandOne, operandTwo)
     checkUndefined(result)
 })
@@ -71,6 +83,7 @@ function clear() {
     setOperator('')
     displayOutput(0)
     operatorCount = 0
+    decimalCounter = 0
     numberStorage = ''
 }
 
@@ -94,7 +107,7 @@ function setOperandOne(value) {
     if (numberStorage === '') {
         operandOne = 0
     } else {
-        operandOne = parseInt(value)
+        operandOne = parseFloat(value)
     }
 }
 
@@ -102,7 +115,7 @@ function setOperandTwo(value) {
     if (numberStorage === '') {
         operandTwo = 0
     } else {
-        operandTwo = parseInt(value)
+        operandTwo = parseFloat(value)
     }
 }
 
