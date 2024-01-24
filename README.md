@@ -1,12 +1,24 @@
-# calculator
-Calculator project made with HTML, CSS and JavaScript.
+# Calculator
 
-Note: This project was challenging due to the nature of mathematical concepts and algorithm needed for stringing together several operations.
-It's fully functional with current operations. 
+## Preview
+![screenshot](images/calculator.png)
 
-- Addition: +
-- Subtraction: -
-- Multiply: *
-- Divide: /
+## Description
+* Basic webpage calculator.
 
-Operations with decimal and positive/negative numbers are available.
+* Operations available:
+    * Addition
+    * Subtraction
+    * Multiplication
+    * Division
+
+## Made with
+* HTML, CSS and JavaScript.
+
+## Visit website
+* [Link](https://jovan-nsty.github.io/calculator/)
+
+## Purpose
+* The purpose of this project was to implement the fundamentals of JavaScript, HTML & CSS.
+
+* This project was done following The Odin Project curriculum.
